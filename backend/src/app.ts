@@ -1,8 +1,13 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import { config } from './config';
+import { initializeDatabase } from './models/seedData';
+import roomRoutes from './routes/roomRoutes';
 
 const app: Application = express();
+
+// Initialize database with seed data
+initializeDatabase();
 
 // Middleware
 app.use(cors({
@@ -21,7 +26,7 @@ app.get('/health', (req: Request, res: Response) => {
     });
 });
 
-// API routes will be added here
+// API routes
 app.get('/api', (req: Request, res: Response) => {
     res.json({
         message: 'Workspace Booking API',
@@ -34,6 +39,9 @@ app.get('/api', (req: Request, res: Response) => {
         }
     });
 });
+
+// Mount routes
+app.use('/api/rooms', roomRoutes);
 
 // 404 handler
 app.use((req: Request, res: Response) => {
