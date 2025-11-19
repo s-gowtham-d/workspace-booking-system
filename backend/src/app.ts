@@ -3,6 +3,7 @@ import cors from 'cors';
 import { config } from './config';
 import { initializeDatabase } from './models/seedData';
 import roomRoutes from './routes/roomRoutes';
+import testRoutes from './routes/testRoutes';
 
 const app: Application = express();
 
@@ -42,6 +43,11 @@ app.get('/api', (req: Request, res: Response) => {
 
 // Mount routes
 app.use('/api/rooms', roomRoutes);
+
+// Test routes (remove in production)
+if (config.nodeEnv === 'development') {
+    app.use('/api/test', testRoutes);
+}
 
 // 404 handler
 app.use((req: Request, res: Response) => {
