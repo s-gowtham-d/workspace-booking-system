@@ -1,0 +1,33 @@
+{
+  "name": "workspace-booking-backend",
+  "version": "1.0.0",
+  "description": "Backend API for workspace booking system",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "workspace",
+    "booking",
+    "api"
+  ],
+  "author": "Gowtham<gowthamselvam809@gmail.com>",
+  "license": "GPL-3.0-only",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.1",
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
