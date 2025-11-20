@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import { config } from './config';
 import { initializeDatabase } from './models/seedData';
+import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import roomRoutes from './routes/roomRoutes';
 import bookingRoutes from './routes/bookingRoutes';
 import analyticsRoutes from './routes/analyticsRoutes';
@@ -54,17 +55,9 @@ if (config.nodeEnv === 'development') {
 }
 
 // 404 handler
-app.use((req: Request, res: Response) => {
-    res.status(404).json({ error: 'Route not found' });
-});
+app.use(notFoundHandler);
 
 // Error handler
-app.use((err: Error, req: Request, res: Response, next: any) => {
-    console.error('Error:', err);
-    res.status(500).json({
-        error: 'Internal server error',
-        message: config.nodeEnv === 'development' ? err.message : undefined
-    });
-});
+app.use(errorHandler);
 
 export default app;

@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import ErrorBoundary from './components/ErrorBoundary';
 import RoomsPage from './pages/RoomsPage';
 import BookingsPage from './pages/BookingsPage';
 import AdminPage from './pages/AdminPage';
