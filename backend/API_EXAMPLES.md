@@ -165,6 +165,78 @@ curl http://localhost:5000/api/rooms/101/stats
 }
 ```
 
+## Analytics Endpoints
+
+### 1. Get Analytics for All Rooms
+
+```bash
+curl "http://localhost:5000/api/analytics?from=2025-11-20&to=2025-11-25"
+```
+
+**Expected Response (200):**
+```json
+[
+  {
+    "roomId": "101",
+    "roomName": "Conference Room A",
+    "totalHours": 15.5,
+    "totalRevenue": 5250
+  },
+  {
+    "roomId": "102",
+    "roomName": "Meeting Pod B",
+    "totalHours": 8.0,
+    "totalRevenue": 2400
+  }
+]
+```
+
+### 2. Get Overall Statistics
+
+```bash
+curl "http://localhost:5000/api/analytics/overview?from=2025-11-20&to=2025-11-25"
+```
+
+**Expected Response (200):**
+```json
+{
+  "dateRange": {
+    "from": "2025-11-20T00:00:00.000Z",
+    "to": "2025-11-25T23:59:59.999Z"
+  },
+  "summary": {
+    "totalRevenue": 12500,
+    "totalHours": 45.5,
+    "totalRooms": 5,
+    "activeRooms": 3,
+    "averageRevenuePerRoom": 2500
+  },
+  "roomBreakdown": [...]
+}
+```
+
+### 3. Get Room-Specific Analytics
+
+```bash
+curl "http://localhost:5000/api/analytics/room/101?from=2025-11-20&to=2025-11-25"
+```
+
+### 4. Get Utilization Metrics
+
+```bash
+curl "http://localhost:5000/api/analytics/utilization?from=2025-11-20&to=2025-11-25"
+```
+
+**Expected Response (200):**
+```json
+{
+  "totalBookings": 15,
+  "confirmedBookings": 12,
+  "cancelledBookings": 3,
+  "cancellationRate": "20.00%"
+}
+```
+
 ## Test Endpoints (Development Only)
 
 ### Calculate Price
