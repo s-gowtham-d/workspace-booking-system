@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import RoomsPage from './pages/RoomsPage';
+import BookingsPage from './pages/BookingsPage';
 
 // Placeholder pages (we'll create these in next commits)
 const HomePage = () => (
@@ -10,20 +12,6 @@ const HomePage = () => (
     <p className="text-muted-foreground text-lg">
       Book meeting rooms with ease. Choose a page from the navigation to get started.
     </p>
-  </div>
-);
-
-const RoomsPage = () => (
-  <div>
-    <h2 className="text-2xl font-bold mb-4">Rooms</h2>
-    <p>Rooms page coming soon...</p>
-  </div>
-);
-
-const BookingsPage = () => (
-  <div>
-    <h2 className="text-2xl font-bold mb-4">Bookings</h2>
-    <p>Bookings page coming soon...</p>
   </div>
 );
 
