@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { type RoomAnalytics } from '@/types';
 import { analyticsApi, handleApiError } from '@/services/api';
-import { getDefaultDateRange, formatDateForAPI } from '@/lib/analyticsUtils';
+import { getDefaultDateRange } from '@/lib/analyticsUtils';
 import StatsCard from '@/components/StatsCard';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';

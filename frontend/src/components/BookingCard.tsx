@@ -2,8 +2,8 @@ import { type Booking, BookingStatus } from '@/types';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { formatDateTime, formatDate, formatTime } from '@/lib/dateUtils';
-import { Calendar, Clock, User, MapPin, IndianRupee, XCircle } from 'lucide-react';
+import { formatDate, formatTime } from '@/lib/dateUtils';
+import { Calendar, User, MapPin, IndianRupee, XCircle } from 'lucide-react';
 
 interface BookingCardProps {
     booking: Booking;

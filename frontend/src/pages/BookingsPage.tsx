@@ -21,7 +21,7 @@ import {
     TableHeader,
     TableRow,
 } from '@/components/ui/table';
-import { formatDateTime, formatDate, formatTime } from '@/lib/dateUtils';
+import { formatDate, formatTime } from '@/lib/dateUtils';
 import { AlertCircle, Loader2, Calendar, RefreshCcw, IndianRupee } from 'lucide-react';
 
 export default function BookingsPage() {
