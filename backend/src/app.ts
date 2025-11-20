@@ -3,6 +3,7 @@ import cors from 'cors';
 import { config } from './config';
 import { initializeDatabase } from './models/seedData';
 import roomRoutes from './routes/roomRoutes';
+import bookingRoutes from './routes/bookingRoutes';
 import testRoutes from './routes/testRoutes';
 
 const app: Application = express();
@@ -43,6 +44,7 @@ app.get('/api', (req: Request, res: Response) => {
 
 // Mount routes
 app.use('/api/rooms', roomRoutes);
+app.use('/api/bookings', bookingRoutes);
 
 // Test routes (remove in production)
 if (config.nodeEnv === 'development') {
