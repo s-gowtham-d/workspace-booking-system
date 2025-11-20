@@ -74,8 +74,10 @@ The frontend will start on `http://localhost:5173`
 
 ## 🌐 Live Deployment
 
-- **Frontend:** [To be deployed on Netlify/Vercel]
-- **Backend API:** [To be deployed on Render/Railway]
+- **Frontend:** [Deploy on Netlify/Vercel]
+- **Backend API:** [Deploy on Render/Railway]
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 ## 📚 API Documentation
 
