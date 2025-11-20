@@ -13,9 +13,9 @@
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "skipLibCheck": true,
-        "types": [
-            "node"
-        ],
+        // "types": [
+        //     "node"
+        // ],
         "forceConsistentCasingInFileNames": true,
         "sourceMap": true,
         "declaration": true,
